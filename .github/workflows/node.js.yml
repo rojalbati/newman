@@ -28,3 +28,8 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run ci
+    - uses: actions/upload-artifact@v2
+      with:
+        name: htmlreport
+        path: newman
+        retention-days: 5

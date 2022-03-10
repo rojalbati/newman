@@ -1,10 +1,7 @@
-# testing-app-example
+# Newman
 
-> A TodoMVC app with simple REST backend
+> API Testing with Newman
 
-TodoMVC application based on [TodoMVC Vue example](https://github.com/tastejs/todomvc/tree/gh-pages/examples/vue).
-
-![Todo application](./img/todos.png)
 
 ## Install
 
@@ -12,10 +9,8 @@ Requires Node v12+
 
 ```
 $ npm install
+$ npm run ci
 ```
 
-Start the application with `npm start` and open `localhost:3000`
-
-## See more
-
-- [Cypress Basics workshop](https://github.com/bahmutov/cypress-workshop-basics)
+Install all the dependencies with `npm install`
+Start the todo application and run the api test with `npm run ci`

@@ -34,7 +34,6 @@ jobs:
         path: newman
         retention-days: 5
 
-jobs:
   run_endtoend_tests:
 
     runs-on: ubuntu-latest

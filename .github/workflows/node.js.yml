@@ -27,9 +27,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
-    - run: npm run ci
+    - run: npm run ci:apitest
+    - run: npm run ci:endtoendtest
     - uses: actions/upload-artifact@v2
       with:
-        name: htmlreport
+        name: htmlreport-apitest
         path: newman
+        retention-days: 5
+    - uses: actions/upload-artifact@v2
+      with:
+        name: videorecording-endtoendtest
+        path: cypress/videos
         retention-days: 5

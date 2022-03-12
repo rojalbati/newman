@@ -2,3 +2,5 @@ newman/
 node_modules/
 .DS_Store
 data.json
+cypress/videos/
+cypress/screenshots/

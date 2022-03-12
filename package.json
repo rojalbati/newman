@@ -10,8 +10,10 @@
     "reset:db": "npm run reset",
     "reset:database": "npm run reset",
     "start-server": "npm start",
-    "test": "newman run collection.json -r htmlextra",
-    "ci": "start-server-and-test start-server http://localhost:3000 test"
+    "apitest": "newman run collection.json -r htmlextra",
+    "endtoendtest": "npx cypress run",
+    "ci:apitest": "start-server-and-test start-server http://localhost:3000 apitest",
+    "ci:endtoendtest": "start-server-and-test start-server http://localhost:3000 endtoendtest"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,7 @@
     "newman-reporter-htmlextra": "^1.22.7"
   },
   "devDependencies": {
+    "cypress": "^9.5.1",
     "prettier": "2.5.1",
     "start-server-and-test": "^1.14.0"
   },

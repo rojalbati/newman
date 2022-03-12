@@ -23,4 +23,4 @@ describe('end to end test', () => {
     cy.get('label').should('not.exist');
   })
 
-}) //Comment to view the comment by Cypress Dashboard on PR 1
+})

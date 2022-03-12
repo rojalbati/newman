@@ -10,7 +10,7 @@ on:
     branches: [ main ]
 
 jobs:
-  run_api_tests:
+  API Tests:
 
     runs-on: ubuntu-latest
 
@@ -34,10 +34,10 @@ jobs:
         path: newman
         retention-days: 5
 
-  run_endtoend_tests:
+  End to End Tests:
 
     runs-on: ubuntu-latest
-    needs: [run_api_tests]
+    needs: [API Tests]
     strategy:
       matrix:
         node-version: [14.x]

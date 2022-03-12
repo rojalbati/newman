@@ -11,7 +11,7 @@
     "reset:database": "npm run reset",
     "start-server": "npm start",
     "apitest": "newman run collection.json -r htmlextra",
-    "endtoendtest": "npx cypress run",
+    "endtoendtest": "npx cypress run --record",
     "ci:apitest": "start-server-and-test start-server http://localhost:3000 apitest",
     "ci:endtoendtest": "start-server-and-test start-server http://localhost:3000 endtoendtest"
   },

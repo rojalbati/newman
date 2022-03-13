@@ -33,8 +33,11 @@ jobs:
         path: newman
         retention-days: 5
 
+    - name: Reset Database
+      run: npm run reset:database
+
     - name: E2E Test
-      run: npm run ci:endtoendtest:record
+      run: npm run endtoendtest:record
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 

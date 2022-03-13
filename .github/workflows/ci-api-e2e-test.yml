@@ -25,7 +25,9 @@ jobs:
 
     - name: API Test
       run: npm run ci:apitest
-    - uses: actions/upload-artifact@v2
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
       with:
         name: htmlreport-apitest
         path: newman

@@ -26,7 +26,7 @@ jobs:
     - name: API Test
       run: npm run ci:apitest
 
-    - name: Upload Artifact
+    - name: Upload API Test html report
       uses: actions/upload-artifact@v2
       with:
         name: htmlreport-apitest
@@ -37,7 +37,9 @@ jobs:
       run: npm run ci:endtoendtest:record
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-    - uses: actions/upload-artifact@v2
+
+    - name: Upload E2E Test video recording
+      uses: actions/upload-artifact@v2
       with:
         name: videorecording-endtoendtest
         path: cypress/videos

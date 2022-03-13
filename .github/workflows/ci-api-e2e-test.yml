@@ -1,4 +1,4 @@
-name: 'CI: API and E2E Test'
+name: 'CI: API & E2E Test'
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   run_tests:
-    name: Test
+    name: API & E2E Test
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Test API
+    - name: API Test
       run: npm run ci:apitest
     - uses: actions/upload-artifact@v2
       with:
@@ -31,7 +31,7 @@ jobs:
         path: newman
         retention-days: 5
 
-    - name: Test E2E Workflow
+    - name: E2E Test
       run: npm run ci:endtoendtest:record
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

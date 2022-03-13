@@ -24,14 +24,20 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm run ci:apitest
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Test API
+      run: npm run ci:apitest
     - uses: actions/upload-artifact@v2
       with:
         name: htmlreport-apitest
         path: newman
         retention-days: 5
-    - run: npm run ci:endtoendtest:record
+
+    - name: Test E2E Workflow
+      run: npm run ci:endtoendtest:record
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
     - uses: actions/upload-artifact@v2

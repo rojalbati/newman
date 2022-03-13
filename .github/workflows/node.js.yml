@@ -14,26 +14,28 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+
     - name: Use Node.js
       uses: actions/setup-node@v2
       with:
         cache: 'npm'
+
     - name: Install dependencies
       run: npm install
+
     - name: Test API
       run: npm run ci:apitest
-    - name: Store API test html report
     - uses: actions/upload-artifact@v2
       with:
         name: htmlreport-apitest
         path: newman
         retention-days: 5
+
     - name: Test E2E Workflow
       run: npm run ci:endtoendtest:record
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-    - name: Store E2E test video recording
-      uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v2
       with:
         name: videorecording-endtoendtest
         path: cypress/videos

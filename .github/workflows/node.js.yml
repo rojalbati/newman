@@ -51,7 +51,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: node -v
     # - run: npm install
     # - run: npm run ci:endtoendtest:record
     #   env:
@@ -62,7 +61,6 @@ jobs:
         start: npm start
         wait-on: 'http://localhost:3000'
         spec: cypress/integration/todo.spec.js
-
       env:
         # pass the Dashboard record key as an environment variable
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

@@ -37,12 +37,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/todos",
-					"protocol": "http",
+					"raw": "{{baseURL}}/todos",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "3000",
 					"path": [
 						"todos"
 					]
@@ -75,12 +73,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/todos/{{itemID}}",
-					"protocol": "http",
+					"raw": "{{baseURL}}/todos/{{itemID}}",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "3000",
 					"path": [
 						"todos",
 						"{{itemID}}"
@@ -109,12 +105,10 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/todos/{{itemID}}",
-					"protocol": "http",
+					"raw": "{{baseURL}}/todos/{{itemID}}",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "3000",
 					"path": [
 						"todos",
 						"{{itemID}}"
@@ -146,12 +140,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/todos/{{itemID}}",
-					"protocol": "http",
+					"raw": "{{baseURL}}/todos/{{itemID}}",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "3000",
 					"path": [
 						"todos",
 						"{{itemID}}"

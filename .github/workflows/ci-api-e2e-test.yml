@@ -1,0 +1,46 @@
+name: 'CI: API & E2E Test'
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run_tests:
+    name: API & E2E Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: API Test
+      run: npm run ci:apitest
+
+    - name: Upload API Test html report
+      uses: actions/upload-artifact@v2
+      with:
+        name: htmlreport-apitest
+        path: newman
+        retention-days: 5
+
+    - name: E2E Test
+      run: npm run ci:endtoendtest:record
+      env:
+        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+    - name: Upload E2E Test video recording
+      uses: actions/upload-artifact@v2
+      with:
+        name: videorecording-endtoendtest
+        path: cypress/videos
+        retention-days: 5

@@ -6,20 +6,14 @@ describe('end to end test', () => {
     cy.visit('/')
   })
 
-  it('Create a Todo Item', () => {
+  it('Verify a Todo Item can be created', () => {
     cy.get('.new-todo').type('Rojal Bati{enter}')
-  })
-
-  it('Get the created Todo Item', () => {
     cy.get('label').should('be.exist');
     cy.get('label').should('have.text','Rojal Bati')
   })
 
-  it('Delete the created Todo Item', () => {
+  it('Verify a Todo Item can be Deleted', () => {
     cy.get('.destroy').click({ force: true })
-  })
-
-  it('Get the deleted Todo Item', () => {
     cy.get('label').should('not.exist');
   })
 

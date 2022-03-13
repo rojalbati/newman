@@ -11,9 +11,11 @@
     "reset:database": "npm run reset",
     "start-server": "npm start",
     "apitest": "newman run collection.json -r htmlextra",
-    "endtoendtest": "npx cypress run --record",
+    "endtoendtest": "npx cypress run",
+    "endtoendtest:record": "npx cypress run --record",
     "ci:apitest": "start-server-and-test start-server http://localhost:3000 apitest",
-    "ci:endtoendtest": "start-server-and-test start-server http://localhost:3000 endtoendtest"
+    "ci:endtoendtest": "start-server-and-test start-server http://localhost:3000 endtoendtest",
+    "ci:endtoendtest:record": "start-server-and-test start-server http://localhost:3000 endtoendtest:record"
   },
   "repository": {
     "type": "git",

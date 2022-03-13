@@ -51,7 +51,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
-    - run: npm run ci:endtoendtest
+    - run: npm run ci:endtoendtest:record
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
     - uses: actions/upload-artifact@v2

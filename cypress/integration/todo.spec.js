@@ -1,5 +1,4 @@
-/// <reference types="cypress" />
-
+// @ts-check
 describe('end to end test', () => {
 
   beforeEach(() => {
@@ -9,7 +8,7 @@ describe('end to end test', () => {
   it('Verify a Todo Item can be created', () => {
     cy.get('.new-todo').type('Rojal Bati{enter}');
     cy.get('label').should('be.exist');
-    cy.get('label').should('have.text','Rojal Bati');
+    cy.get('label').should('have.text', 'Rojal Bati');
   })
 
   it('Verify a Todo Item can be Deleted', () => {

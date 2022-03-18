@@ -12,9 +12,11 @@
     "start-server": "npm start",
     "apitest": "newman run collection.json --environment postman_environment.json -r htmlextra",
     "endtoendtest": "npx cypress run",
+    "endtoendtest:burn": "npx cypress run --env grep=\"Verify a Todo Item can be created\",burn=10",
     "endtoendtest:record": "npx cypress run --record",
     "ci:apitest": "start-server-and-test start-server http://localhost:3000 apitest",
     "ci:endtoendtest": "start-server-and-test start-server http://localhost:3000 endtoendtest",
+    "ci:endtoendtest:burn": "start-server-and-test start-server http://localhost:3000 endtoendtest:burn",
     "ci:endtoendtest:record": "start-server-and-test start-server http://localhost:3000 endtoendtest:record"
   },
   "repository": {
@@ -38,6 +40,7 @@
   },
   "devDependencies": {
     "cypress": "^9.5.1",
+    "cypress-grep": "^2.13.1",
     "prettier": "2.5.1",
     "start-server-and-test": "^1.14.0"
   },

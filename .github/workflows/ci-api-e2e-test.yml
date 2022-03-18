@@ -34,7 +34,7 @@ jobs:
         retention-days: 5
 
     - name: E2E Test
-      run: npm run ci:endtoendtest:record
+      run: npm run ci:endtoendtest:burn
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 

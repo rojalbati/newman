@@ -10,6 +10,8 @@ describe('end to end test', () => {
     cy.get('.new-todo').type('Rojal Bati{enter}');
     cy.get('label').should('be.exist');
     cy.get('label').should('have.text','Rojal Bati');
+    cy.get('.destroy').click({ force: true });
+    cy.get('label').should('not.exist'); //Adding comment to run test
   })
 
   it('Verify a Todo Item can be Deleted', () => {

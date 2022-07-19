@@ -1,0 +1,4 @@
+{"compilerOptions": {
+    "types": ["cypress"],
+    "resolveJsonModule": true
+}}

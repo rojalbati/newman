@@ -2,7 +2,7 @@
 
 # Newman
 
-> API Testing with Newman
+> API Testing with Newman Tool
 
 
 ## Install

@@ -4,8 +4,11 @@
 
 > API Testing with Newman
 
+## Trigger test
 
-## Install
+Open a Pull Request and assign a "test ready" label to the Pull Request
+
+## Install and run test locally
 
 Requires Node v12+
 

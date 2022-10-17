@@ -17,4 +17,4 @@ $ npm install
 $ npm run ci:apitest
 ```
 
-Install all the dependencies with `npm install` & Start the todo application and run the api test with `npm run ci:apitest`
+Install all the dependencies with `npm install` & Start the todo app and run the api test with `npm run ci:apitest`
